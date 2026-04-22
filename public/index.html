@@ -23,11 +23,10 @@ nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
   background:rgba(26,35,126,0.97);backdrop-filter:blur(10px);
   display:flex;align-items:center;justify-content:space-between;
-  padding:16px 48px;
+  padding:12px 48px;
 }
-.nav-logo{display:flex;align-items:center;gap:12px;}
-.nav-logo .cerchio{width:38px;height:38px;background:var(--giallo);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:13px;color:var(--blu);}
-.nav-logo span{font-family:'Syne',sans-serif;font-weight:700;font-size:16px;color:var(--bianco);}
+.nav-logo-img{height:45px; display:block;} /* Altezza logo in nav */
+
 .nav-cta{background:var(--giallo);color:var(--blu);font-family:'Syne',sans-serif;font-weight:700;font-size:14px;padding:10px 24px;border-radius:6px;text-decoration:none;transition:transform 0.2s;}
 .nav-cta:hover{transform:translateY(-2px);}
 
@@ -38,20 +37,6 @@ nav{
   display:flex;align-items:center;justify-content:center;
   padding:120px 48px 80px;
   position:relative;overflow:hidden;
-}
-.hero::before{
-  content:'';position:absolute;top:-200px;right:-200px;
-  width:600px;height:600px;
-  border-radius:50%;
-  background:rgba(249,168,37,0.08);
-  pointer-events:none;
-}
-.hero::after{
-  content:'';position:absolute;bottom:-150px;left:-150px;
-  width:500px;height:500px;
-  border-radius:50%;
-  background:rgba(255,255,255,0.04);
-  pointer-events:none;
 }
 .hero-inner{max-width:1100px;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
 .hero-badge{
@@ -80,34 +65,17 @@ h1 span{color:var(--giallo);}
   box-shadow:0 8px 32px rgba(249,168,37,0.4);
 }
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(249,168,37,0.5);}
-.prezzo-hero{color:rgba(255,255,255,0.6);font-size:15px;}
-.prezzo-hero strong{color:var(--bianco);font-size:22px;font-weight:700;}
 
-.hero-visual{
-  background:#ffffff;
-  border:1px solid rgba(255,255,255,0.3);
-  border-radius:16px;padding:28px;
-  box-shadow:0 20px 60px rgba(0,0,0,0.3);
+/* LOGO HERO VISUAL */
+.hero-visual-logo{
+    width: 100%;
+    max-width: 500px;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
+    transition: transform 0.3s ease;
 }
-.mockup-header{
-  background:var(--blu);border-radius:10px 10px 0 0;
-  padding:14px 20px;display:flex;align-items:center;gap:12px;margin:-28px -28px 20px;
+.hero-visual-logo:hover {
+    transform: scale(1.02);
 }
-.mockup-logo{width:34px;height:34px;background:var(--giallo);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:11px;color:var(--blu);}
-.mockup-title{font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:var(--bianco);}
-.mockup-sub{font-size:11px;color:rgba(255,255,255,0.5);}
-.mockup-tabs{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap;}
-.mockup-tab{font-size:11px;padding:5px 10px;border-radius:4px;background:#f0f2f8;color:#6b7280;}
-.mockup-tab.active{background:var(--blu);color:#ffffff;}
-.mockup-field{margin-bottom:10px;}
-.mockup-label{font-size:9px;color:#9ca3af;letter-spacing:0.8px;margin-bottom:3px;}
-.mockup-input{background:#f9fafb;border:1px solid #e5e7eb;border-radius:5px;padding:7px 10px;font-size:12px;color:#1a1a2e;}
-.mockup-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
-.mockup-btns{display:flex;gap:6px;margin-top:16px;flex-wrap:wrap;}
-.mockup-btn{font-size:10px;padding:7px 12px;border-radius:5px;font-weight:600;}
-.mockup-btn.blu{background:var(--blu2);color:var(--bianco);}
-.mockup-btn.green{background:#2e7d32;color:var(--bianco);}
-.mockup-btn.yellow{background:var(--giallo);color:var(--blu);}
 
 /* FEATURES */
 .features{padding:100px 48px;background:var(--grigio);}
@@ -138,7 +106,6 @@ h1 span{color:var(--giallo);}
 }
 .step-title{font-family:'Syne',sans-serif;font-weight:700;font-size:17px;margin-bottom:8px;}
 .step-text{font-size:14px;color:var(--muted);line-height:1.6;}
-.step-arrow{display:flex;align-items:center;justify-content:center;font-size:24px;color:var(--giallo);padding-top:16px;}
 
 /* PRICING */
 .pricing{padding:100px 48px;background:var(--blu);}
@@ -176,7 +143,6 @@ h1 span{color:var(--giallo);}
   box-shadow:0 8px 32px rgba(249,168,37,0.4);
 }
 .btn-acquista:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(249,168,37,0.6);}
-.pricing-note{font-size:13px;color:rgba(255,255,255,0.4);margin-top:16px;}
 
 /* FAQ */
 .faq{padding:100px 48px;background:var(--grigio);}
@@ -189,19 +155,17 @@ h1 span{color:var(--giallo);}
 footer{background:var(--testo);padding:40px 48px;text-align:center;}
 footer p{font-size:14px;color:rgba(255,255,255,0.4);}
 footer a{color:rgba(255,255,255,0.6);text-decoration:none;}
-footer a:hover{color:var(--giallo);}
 
-/* CENTRATO */
 .centered{max-width:1100px;margin:0 auto;}
 .text-center{text-align:center;}
 
 @media(max-width:768px){
   nav{padding:14px 20px;}
   .hero{padding:100px 20px 60px;}
-  .hero-inner{grid-template-columns:1fr;gap:40px;}
-  .hero-visual{display:none;}
+  .hero-inner{grid-template-columns:1fr;gap:40px; text-align:center;}
+  .hero-visual-logo{max-width:280px; margin: 0 auto;}
+  .hero-cta-group{justify-content: center;}
   .features,.come-funziona,.pricing,.faq{padding:60px 20px;}
-  footer{padding:32px 20px;}
 }
 </style>
 </head>
@@ -210,8 +174,8 @@ footer a:hover{color:var(--giallo);}
 <!-- NAV -->
 <nav>
   <div class="nav-logo">
-    <div class="cerchio">CQ</div>
-    <span>CertificazioneQuadri</span>
+    <!-- LOGO AGGIORNATO NELLA NAV -->
+    <img src="https://raw.githubusercontent.com/manuel-conformit/logo/main/logo_trasparente.png" alt="Conformità Quadri Logo" class="nav-logo-img">
   </div>
   <a href="https://paypal.me/conformitquadri/99EUR" target="_blank" class="nav-cta">Acquista — €99</a>
 </nav>
@@ -222,41 +186,16 @@ footer a:hover{color:var(--giallo);}
     <div>
       <div class="hero-badge">Software per costruttori di quadri elettrici</div>
       <h1>Certificati Quadri<br><span>Elettrici BT.</span></h1>
-      <p class="hero-sub">Basta modificare e lavorare sempre con un unico file Word o Excel. Genera certificati professionali in 3 minuti, archivia tutto automaticamente, stampa e firma.</p>
+      <p class="hero-sub">Basta modificare Word o Excel. Genera certificati professionali in 3 minuti, archivia tutto automaticamente, stampa e firma.</p>
       <div class="hero-cta-group">
         <a href="https://conformit-quadri-production.up.railway.app/?demo" target="_blank" class="btn-primary">🔍 PROVA LA DEMO GRATUITA →</a>
-        <div class="prezzo-hero" style="font-size:13px;color:rgba(255,255,255,0.55);">Demo con funzionalità limitate — nessuna registrazione richiesta</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.55); width:100%;">Nessuna registrazione richiesta</div>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="mockup-header">
-        <div class="mockup-logo">EM</div>
-        <div>
-          <div class="mockup-title">Certificati di Conformità — Quadri BT</div>
-          <div class="mockup-sub">Documentazione di Conformità BT</div>
-        </div>
-      </div>
-      <div class="mockup-tabs">
-        <div class="mockup-tab active">Dati Generali</div>
-        <div class="mockup-tab">Dati Tecnici</div>
-        <div class="mockup-tab">Caratteristiche</div>
-        <div class="mockup-tab">Cablaggio</div>
-        <div class="mockup-tab">Allegati</div>
-      </div>
-
-      <div class="mockup-row">
-        <div class="mockup-field"><div class="mockup-label">MATRICOLA QUADRO</div><div class="mockup-input">B147/26</div></div>
-        <div class="mockup-field"><div class="mockup-label">N° PROGRESSIVO</div><div class="mockup-input" style="color:#f9a825;">049/2026</div></div>
-      </div>
-      <div class="mockup-field"><div class="mockup-label">COMMITTENTE</div><div class="mockup-input">Rossi Impianti srl</div></div>
-      <div class="mockup-field"><div class="mockup-label">RIFERIMENTO / UBICAZIONE</div><div class="mockup-input">Quadro di Campo 2 — Impianto Ftv Movinox</div></div>
-      <div class="mockup-btns">
-        <div class="mockup-btn blu">👁 Anteprima</div>
-        <div class="mockup-btn green">🖨 Stampa/PDF</div>
-        <div class="mockup-btn yellow">💾 Salva</div>
-        <div class="mockup-btn" style="background:#e65100;color:#fff;">📋 Registro</div>
-        <div class="mockup-btn" style="background:#1565c0;color:#fff;">📦 ZIP</div>
-      </div>
+    
+    <!-- IMMAGINE LOGO PROFESSIONALE AL POSTO DEL MOCKUP -->
+    <div style="text-align: center;">
+      <img src="https://raw.githubusercontent.com/manuel-conformit/logo/main/logo_header_full.png" alt="Logo Conformità Quadri" class="hero-visual-logo">
     </div>
   </div>
 </section>
@@ -266,107 +205,29 @@ footer a:hover{color:var(--giallo);}
   <div class="centered">
     <div class="section-label">Funzionalità</div>
     <h2 class="section-title">Tutto quello che serve.<br>Niente di superfluo.</h2>
-    <p class="section-sub">Progettato da chi costruisce quadri elettrici ogni giorno. Ogni campo e ogni pagina è pensato per il tuo lavoro quotidiano.</p>
+    <p class="section-sub">Progettato da chi costruisce quadri elettrici ogni giorno. Ogni campo è pensato per il tuo lavoro quotidiano.</p>
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-icon">📄</div>
         <div class="feature-title">4 pagine complete a norma</div>
-        <div class="feature-text">Dichiarazione di Conformità, Dichiarazione CE, Rapporto di Prova Individuale e Dati Tecnici. Tutto conforme CEI EN 61439-1/2.</div>
+        <div class="feature-text">Dichiarazione di Conformità, Dichiarazione CE, Rapporto di Prova e Dati Tecnici. Conforme CEI EN 61439.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🖨️</div>
         <div class="feature-title">PDF professionale</div>
-        <div class="feature-text">Stampa direttamente dal browser in formato A4. Layout pulito e professionale, pronto per la firma e il timbro.</div>
+        <div class="feature-text">Layout pulito e professionale, pronto per la firma e il timbro.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">📋</div>
         <div class="feature-title">Archivio e registro</div>
-        <div class="feature-text">Tutti i certificati salvati con progressivo automatico. Rubrica clienti integrata con autocompletamento.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📸</div>
-        <div class="feature-title">Foto e schema elettrico</div>
-        <div class="feature-text">Allega fino a 8 foto del quadro e lo schema elettrico definitivo. Tutto archiviato insieme al certificato.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">☁️</div>
-        <div class="feature-title">Accessibile ovunque</div>
-        <div class="feature-text">App web, funziona da qualsiasi PC senza installazioni. I dati sono al sicuro online, condivisibili con i colleghi.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">⚙️</div>
-        <div class="feature-title">Dati azienda personalizzabili</div>
-        <div class="feature-text">Inserisci ragione sociale, indirizzo e logo della tua azienda. Tutti i certificati usciranno con i tuoi dati.</div>
+        <div class="feature-text">Tutti i certificati salvati con progressivo automatico e rubrica clienti integrata.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🌡️</div>
         <div class="feature-title">Verifica sovratemperatura</div>
-        <div class="feature-text">Calcolo opzionale della sovratemperatura (CEI EN 61439-1 art. 10.10) con lista componenti, fattore di contemporaneità e esito automatico. Genera una quinta pagina dedicata nel certificato.</div>
+        <div class="feature-text">Calcolo automatico (CEI EN 61439-1 art. 10.10) con esito immediato.</div>
       </div>
     </div>
-  </div>
-</section>
-
-
-<!-- COME FUNZIONA -->
-<section class="come-funziona">
-  <div class="centered text-center">
-    <div class="section-label">Come funziona</div>
-    <h2 class="section-title" style="margin-bottom:16px;">Acquisti una volta,<br>usi per sempre.</h2>
-    <p class="section-sub" style="margin:0 auto 56px;">Nessun abbonamento, nessuna sorpresa. Paghi €99 e l'app è tua.</p>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-title">Clicca Acquista</div>
-        <div class="step-text">Clicca su <strong>Acquista — €99</strong> in alto a destra. Verrai reindirizzato a PayPal per pagare in sicurezza.</div>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-title">Effettua il pagamento</div>
-        <div class="step-text">Paga €99 in sicurezza tramite PayPal. Entro 24 ore ricevi il link personale di accesso.</div>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-title">Scegli la tua password</div>
-        <div class="step-text">Al primo accesso scegli la password che vuoi. I tuoi dati sono privati e separati da tutti gli altri.</div>
-      </div>
-      <div class="step">
-        <div class="step-num">4</div>
-        <div class="step-title">Inizia a lavorare</div>
-        <div class="step-text">Inserisci i dati della tua azienda e genera il primo certificato in meno di 3 minuti.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- GARANZIA -->
-<section style="padding:60px 48px;background:#e8f5e9;">
-  <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px;text-align:center;">
-    <div>
-      <div style="font-size:36px;margin-bottom:12px;">🔒</div>
-      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:16px;margin-bottom:8px;color:#1a237e;">Pagamento sicuro</div>
-      <div style="font-size:14px;color:#555;line-height:1.6;">Pagamento tramite PayPal — la piattaforma più sicura al mondo per i pagamenti online.</div>
-    </div>
-    <div>
-      <div style="font-size:36px;margin-bottom:12px;">⚡</div>
-      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:16px;margin-bottom:8px;color:#1a237e;">Accesso entro 24 ore</div>
-      <div style="font-size:14px;color:#555;line-height:1.6;">Dopo il pagamento ricevi il link personale entro 24 ore. In caso di problemi ti rimborsiamo.</div>
-    </div>
-    <div>
-      <div style="font-size:36px;margin-bottom:12px;">🛠️</div>
-      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:16px;margin-bottom:8px;color:#1a237e;">Supporto diretto</div>
-      <div style="font-size:14px;color:#555;line-height:1.6;">Hai un problema? Scrivi a conformitquadri@gmail.com — rispondiamo entro 24 ore lavorative.</div>
-    </div>
-  </div>
-</section>
-
-<!-- CHI SIAMO -->
-<section style="padding:80px 48px;background:#1a237e;">
-  <div style="max-width:800px;margin:0 auto;text-align:center;">
-    <div style="font-size:12px;font-weight:600;letter-spacing:2px;color:#f9a825;text-transform:uppercase;margin-bottom:16px;">Chi siamo</div>
-    <h2 style="font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(24px,3vw,36px);color:#fff;margin-bottom:20px;">Nati nel settore, per il settore.</h2>
-    <p style="font-size:17px;color:rgba(255,255,255,0.75);line-height:1.8;margin-bottom:16px;">CertificazioneQuadri è stato sviluppato da professionisti con anni di esperienza nella costruzione e certificazione di quadri elettrici BT. Lo usiamo ogni giorno nella nostra attività — e lo abbiamo reso disponibile anche ad altre aziende del settore.</p>
-    <p style="font-size:17px;color:rgba(255,255,255,0.75);line-height:1.8;">Non è un software generico adattato al nostro settore. È nato appositamente per chi costruisce quadri e deve produrre documentazione CEI 61439 in modo rapido, corretto e professionale.</p>
   </div>
 </section>
 
@@ -381,62 +242,13 @@ footer a:hover{color:var(--giallo);}
       <div class="pricing-iva">IVA inclusa — paghi una volta sola</div>
       <ul class="pricing-list">
         <li>Accesso illimitato all'app web</li>
-        <li>Genera certificati CEI 61439-1/2 completi</li>
-        <li>Archivio clienti e certificati illimitato</li>
+        <li>Genera certificati CEI 61439 completi</li>
+        <li>Archivio certificati illimitato</li>
         <li>Foto quadro e schema elettrico allegati</li>
         <li>Dati azienda personalizzabili</li>
-        <li>Aggiornamenti inclusi</li>
         <li>Nessun abbonamento mensile</li>
       </ul>
       <a href="https://paypal.me/conformitquadri/99EUR" target="_blank" class="btn-acquista">ACQUISTA ORA →</a>
-      <p class="pricing-note">Riceverai il link di accesso entro 24 ore dal pagamento</p>
-      <a href="https://conformit-quadri-production.up.railway.app/?demo" target="_blank" style="display:block;margin-top:16px;color:rgba(255,255,255,0.6);font-size:14px;text-align:center;text-decoration:underline;text-underline-offset:3px;">Non sei sicuro? Prova prima la demo gratuita →</a>
-    </div>
-  </div>
-</section>
-
-<!-- PERSONALIZZAZIONE -->
-<section style="padding:60px 48px;background:#1a237e;">
-  <div style="max-width:800px;margin:0 auto;text-align:center;">
-    <div style="font-size:12px;font-weight:600;letter-spacing:2px;color:#f9a825;text-transform:uppercase;margin-bottom:16px;">Su misura per te</div>
-    <h2 style="font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(24px,3vw,36px);color:#fff;margin-bottom:20px;">Hai esigenze particolari?</h2>
-    <p style="font-size:17px;color:rgba(255,255,255,0.75);line-height:1.8;margin-bottom:32px;">Ogni azienda lavora in modo diverso. Se hai bisogno di modifiche specifiche — campi aggiuntivi, layout personalizzato, integrazione con i tuoi processi — possiamo realizzarle su richiesta.</p>
-    <a href="mailto:conformitquadri@gmail.com?subject=Richiesta%20personalizzazione%20CertificazioneQuadri&body=Salve%2C%20vorrei%20richiedere%20una%20personalizzazione%20del%20software." style="display:inline-block;background:#f9a825;color:#1a237e;font-family:'Syne',sans-serif;font-weight:700;font-size:17px;padding:16px 36px;border-radius:8px;text-decoration:none;">Scrivici per un preventivo →</a>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="faq">
-  <div class="centered">
-    <div class="text-center" style="margin-bottom:48px;">
-      <div class="section-label">Domande frequenti</div>
-      <h2 class="section-title">Hai dubbi?</h2>
-    </div>
-    <div class="faq-list">
-      <div class="faq-item">
-        <div class="faq-q">Come funziona il pagamento?</div>
-        <div class="faq-a">Clicca su "Acquista ora", verrai reindirizzato a PayPal per pagare €99 in sicurezza. Dopo il pagamento scrivi a conformitquadri@gmail.com con la ricevuta PayPal e riceverai il link di accesso entro 24 ore.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Devo installare qualcosa?</div>
-        <div class="faq-a">No, è un'app web. Funziona direttamente dal browser su qualsiasi PC, senza installazioni. Basta avere una connessione internet.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">I miei dati sono al sicuro?</div>
-        <div class="faq-a">Sì. Ogni cliente ha il suo spazio privato protetto da password scelta da te. Nessun altro può vedere i tuoi certificati.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Posso usarla su più PC?</div>
-        <div class="faq-a">Sì, puoi accedere da qualsiasi PC e anche condividere l'accesso con un collega. I dati sono sincronizzati in tempo reale.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Cosa succede se ho un problema?</div>
-        <div class="faq-a">Scrivici a conformitquadri@gmail.com. Rispondiamo entro 24 ore lavorative.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">I certificati generati sono validi legalmente?</div>
-        <div class="faq-a">L'app genera i documenti conformi alla struttura richiesta dalla norma CEI EN 61439-1/2. La responsabilità della correttezza dei dati inseriti e della firma è del costruttore del quadro, come previsto dalla normativa.</div>
-      </div>
     </div>
   </div>
 </section>
